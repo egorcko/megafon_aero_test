@@ -1,0 +1,44 @@
+@use "sass:math";
+
+@function trs($params...) {
+  $result: ();
+  $duration: 0.2s;
+  $func: ease;
+
+  @each $param in $params {
+    $result: append($result, $param $duration $func, comma);
+  }
+
+  @return $result;
+}
+
+@mixin remove-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.skeleton {
+  border-radius: 4px;
+  animation: skeletonLoading 1.3s ease-in 0s infinite;
+}
+
+@keyframes skeletonLoading {
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@mixin responsive-ratio($x, $y) {
+  padding-top: unquote(math.div($y, $x) * 100 + "%");
+}

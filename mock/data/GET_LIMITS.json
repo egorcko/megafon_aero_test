@@ -1,0 +1,24 @@
+{
+  "limits": [
+    {
+      "id": "minutes",
+      "title": "Минуты",
+      "unlimited": true
+    },
+    {
+      "id": "internet",
+      "title": "Интернет",
+      "currentValue": 20,
+      "totalValue": 100,
+      "measurement": "Гб"
+    },
+    {
+      "id": "sms",
+      "title": "SMS",
+      "currentValue": 66,
+      "totalValue": 250
+    }
+  ]
+}
+
+  

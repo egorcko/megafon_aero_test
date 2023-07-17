@@ -1,0 +1,13 @@
+$grid-columns: 12 !default;
+$grid-gutter-width: 20px !default;
+
+$container-max-widths: (
+  lg: 1320px,
+) !default;
+
+$container-paddings: (
+  xs: 16px,
+  md: 50px,
+  lg: 40px,
+  xl: 20px,
+) !default;
