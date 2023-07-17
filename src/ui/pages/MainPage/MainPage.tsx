@@ -1,9 +1,13 @@
 import { FC, useCallback, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
+import ExitIcon from 'public/icons/exit.svg';
 import LogoIcon from 'public/icons/logo.svg';
 
 import { getLimits } from '@/api/getLimits';
 import { getUserData } from '@/api/getUserData';
+import { AUTH_COOKIE } from '@/constants';
+import { COOKIES } from '@/utils/cookies';
 
 import { Limit } from '@/types/limit';
 import { UserData } from '@/types/user';
@@ -14,6 +18,8 @@ import LimitIndicator from './components/LimitIndicator/LimitIndicator';
 import styles from './MainPage.module.scss';
 
 const MainPage: FC = () => {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState<UserData | null>(null);
   const [limits, setLimits] = useState<Limit[] | null>(null);
@@ -33,6 +39,11 @@ const MainPage: FC = () => {
     setLoading(false);
   }, []);
 
+  const exit = () => {
+    COOKIES.remove(AUTH_COOKIE);
+    router.replace('/login');
+  };
+
   useEffect(() => {
     if (!userData) {
       loadData();
@@ -43,8 +54,13 @@ const MainPage: FC = () => {
     <div className={styles.root}>
       <LogoIcon className={styles.logo} />
       <div className={styles.contentWrapper}>
-        {!loading && userData && <p className={styles.phoneNumber}>{userData.phone}</p>}
-        {loading && <div className={styles.phoneSkeleton} />}
+        <div className={styles.header}>
+          {!loading && userData && <p className={styles.phoneNumber}>{userData.phone}</p>}
+          {loading && <div className={styles.phoneSkeleton} />}
+          <button type="button" onClick={exit} className={styles.exit}>
+            <ExitIcon />
+          </button>
+        </div>
         <div className={styles.content}>
           <Balance value={userData?.balance ?? 0} />
           <p className={styles.limitsTitle}>Остатки по пакетам</p>
