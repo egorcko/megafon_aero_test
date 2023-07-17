@@ -22,7 +22,7 @@
     "favicons": "real-favicon generate src/assets/meta/meta-description.json src/assets/meta/meta-data.json ./public/meta && cpy public/meta/favicon.ico public",
     "prepare": "husky install",
     "component": "node create-component.js",
-    "server": "node ./mock/server.js"
+    "server": "cd ./mock && yarn install && yarn start"
   },
   "dependencies": {
     "axios": "^0.21.1",
