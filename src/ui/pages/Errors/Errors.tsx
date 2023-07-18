@@ -1,7 +1,9 @@
 import type { FC } from 'react';
+import Lottie from 'lottie-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import notFoundAnimation from 'public/animations/notFound.json';
 import ArrowIcon from 'public/icons/arrow_back.svg';
 
 import styles from './Errors.module.scss';
@@ -21,7 +23,7 @@ const Error: FC = () => {
         </Link>
       </header>
       <div className={styles.content}>
-        <img src="/gifs/notFound.gif" alt="not found" className={styles.image} />
+        <Lottie animationData={notFoundAnimation} className={styles.animation} />
         <h1 className={styles.title}>Что-то пошло не так</h1>
         <p className={styles.text}>Нажмите кнопку или зайдите позже</p>
         <button className={styles.button} type="button" onClick={handleClick}>
