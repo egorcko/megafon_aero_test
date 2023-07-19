@@ -7,12 +7,12 @@ import packageData from 'package.json';
 import metaData from '@/assets/meta/meta-data.json';
 import metaDescription from '@/assets/meta/meta-description.json';
 
-import type { IMetaData } from '@/types/meta';
+import type { MetaData } from '@/types/meta';
 
 const faviconHtml: string = metaData?.favicon?.html_code;
 
 interface MetaProps {
-  meta?: IMetaData;
+  meta?: MetaData;
 }
 
 const Meta: FC<MetaProps> = ({ meta }) => {

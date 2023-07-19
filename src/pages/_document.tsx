@@ -7,7 +7,7 @@ export default class CustomDocument extends Document<DocumentProps> {
     return { ...initialProps };
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <Html lang="ru">
         <Head />

@@ -1,13 +1,13 @@
 import type { NextPage, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 
-import type { IMetaData } from '@/types/meta';
+import type { MetaData } from '@/types/meta';
 
 const Errors = dynamic(() => import('@/ui/pages/Errors/Errors'));
 const Layout = dynamic(() => import('@/ui/components/Layout/Layout'));
 
 interface ErrorProps {
-  meta: IMetaData;
+  meta: MetaData;
 }
 
 const Error: NextPage<ErrorProps> = ({ meta }) => {

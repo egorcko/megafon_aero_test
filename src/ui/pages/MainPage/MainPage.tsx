@@ -53,14 +53,14 @@ const MainPage: FC = () => {
   return (
     <div className={styles.root}>
       <LogoIcon className={styles.logo} />
-      <div className={styles.contentWrapper}>
-        <div className={styles.header}>
+      <section className={styles.contentWrapper}>
+        <header className={styles.header}>
           {!loading && userData && <p className={styles.phoneNumber}>{userData.phone}</p>}
           {loading && <div className={styles.phoneSkeleton} />}
           <button type="button" onClick={exit} className={styles.exit}>
             <ExitIcon />
           </button>
-        </div>
+        </header>
         <div className={styles.content}>
           <Balance value={userData?.balance ?? 0} />
           <p className={styles.limitsTitle}>Остатки по пакетам</p>
@@ -72,7 +72,7 @@ const MainPage: FC = () => {
           )}
           {!loading && limits?.map((item) => <LimitIndicator {...item} key={item.id} />)}
         </div>
-      </div>
+      </section>
     </div>
   );
 };

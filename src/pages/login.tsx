@@ -4,13 +4,13 @@ import nextCookies from 'next-cookies';
 
 import { AUTH_COOKIE } from '@/constants';
 
-import type { IMetaData } from '@/types/meta';
+import type { MetaData } from '@/types/meta';
 
 const Layout = dynamic(() => import('@/ui/components/Layout/Layout'));
 const Login = dynamic(() => import('@/ui/pages/Login/Login'));
 
 interface LoginPageProps {
-  meta?: IMetaData;
+  meta?: MetaData;
 }
 
 const LoginPage: NextPage<LoginPageProps> = ({ meta }) => {

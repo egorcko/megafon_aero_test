@@ -46,7 +46,7 @@ const Login: FC = () => {
   return (
     <div className={styles.root}>
       <LogoIcon className={styles.logo} />
-      <div className={styles.formWrapper}>
+      <section className={styles.formWrapper}>
         <h1 className={styles.title}>Вход в Личный кабинет</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
           <label
@@ -68,9 +68,8 @@ const Login: FC = () => {
               value={value}
               onChange={handleChange}
             />
+            {!!error && <p className={styles.errorText}>{error}</p>}
           </label>
-
-          {!!error && <p className={styles.errorText}>{error}</p>}
 
           <button
             type="submit"
@@ -85,7 +84,7 @@ const Login: FC = () => {
             </span>
           </button>
         </form>
-      </div>
+      </section>
       <h2 className={styles.subtitle}>Включайся!</h2>
     </div>
   );

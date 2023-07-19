@@ -1,13 +1,13 @@
 import type { GetStaticProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
-import type { IMetaData } from '@/types/meta';
+import type { MetaData } from '@/types/meta';
 
 const Layout = dynamic(() => import('@/ui/components/Layout/Layout'));
 const Errors = dynamic(() => import('@/ui/pages/Errors/Errors'));
 
 interface NotFoundPageProps {
-  meta: IMetaData;
+  meta: MetaData;
 }
 
 const NotFoundPage: NextPage<NotFoundPageProps> = ({ meta }) => {

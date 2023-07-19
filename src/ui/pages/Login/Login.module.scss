@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 45px;
+  gap: 4vmin;
 
   @include media-breakpoint-down(xs) {
     padding: 0 16px;
@@ -16,10 +16,10 @@
 }
 
 .logo {
-  font-size: 240px;
+  font-size: 21vmin;
 
   @include media-breakpoint-down(xs) {
-    font-size: 140px;
+    font-size: 37.4vmin;
   }
 }
 
@@ -27,8 +27,7 @@
   background-color: $white;
   border-radius: 20px;
   width: 550px;
-  height: 480px;
-  padding: 0 16px;
+  padding: 9.8vmin 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +51,7 @@
 }
 
 .form {
-  margin-top: 64px;
+  margin-top: 6vmin;
   width: 360px;
 
   @include media-breakpoint-down(xs) {
@@ -135,14 +134,15 @@
   color: $red;
   font-size: 12px;
   line-height: 15px;
-  margin-top: 8px;
-  padding-left: 16px;
   font-weight: 400;
+  position: absolute;
+  left: 16px;
+  top: calc(100% + 8px);
 }
 
 .button {
   border-radius: 52px;
-  margin-top: 32px;
+  margin-top: 55px;
   background-color: $main;
   width: 100%;
   padding: 14px 32px;
@@ -204,7 +204,7 @@
   color: $white;
   font-size: 44px;
   font-weight: 700;
-  line-height: 124px;
+  line-height: 11vmin;
   letter-spacing: 0.5px;
 
   @include media-breakpoint-down(xs) {

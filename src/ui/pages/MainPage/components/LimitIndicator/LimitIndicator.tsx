@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import { Limit } from '@/types/limit';
 
+import useProgressValue from './LimitIndicator.hooks';
+
 import styles from './LimitIndicator.module.scss';
 
 interface LimitIndicatorProps extends Omit<Limit, 'id'> {
@@ -10,13 +12,18 @@ interface LimitIndicatorProps extends Omit<Limit, 'id'> {
 
 const LimitIndicator: FC<LimitIndicatorProps> = ({
   title,
-  totalValue = 100,
-  currentValue = 100,
+  totalValue,
+  currentValue,
   measurement,
   unlimited,
   isSkeleton,
 }) => {
-  const percent = unlimited ? 100 : (currentValue * 100) / totalValue;
+  const { computedClassName, percent } = useProgressValue({
+    styles,
+    totalValue,
+    currentValue,
+    unlimited,
+  });
 
   return (
     <div className={styles.root}>
@@ -26,12 +33,10 @@ const LimitIndicator: FC<LimitIndicatorProps> = ({
         <div className={styles.progress}>
           {!isSkeleton && (
             <div
-              className={cn(styles.progressValue, {
-                [styles.high]: percent > 50,
-                [styles.medium]: percent > 25 && percent <= 50,
-                [styles.low]: percent <= 25,
-              })}
-              style={{ width: `${Math.min(percent, 100)}%` }}
+              className={cn(styles.progressValue, computedClassName)}
+              style={{
+                width: `${percent}%`,
+              }}
             />
           )}
         </div>
