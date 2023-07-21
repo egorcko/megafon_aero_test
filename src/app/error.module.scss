@@ -16,6 +16,15 @@
   padding: 4px;
 }
 
+.animation {
+  width: 375px;
+  object-fit: contain;
+
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -25,15 +34,6 @@
 
   @include media-breakpoint-down(xs) {
     padding: 10px 0;
-  }
-}
-
-.animation {
-  width: 375px;
-  object-fit: contain;
-
-  @include media-breakpoint-down(xs) {
-    width: 100%;
   }
 }
 

@@ -1,0 +1,38 @@
+.root {
+  position: relative;
+  height: 100%;
+  background-color: $main;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4vmin;
+
+  @include media-breakpoint-down(xs) {
+    padding: 0 16px;
+    gap: 24px;
+  }
+}
+
+.logo {
+  font-size: 21vmin;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 37.4vmin;
+  }
+}
+
+.subtitle {
+  color: $white;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 11vmin;
+  letter-spacing: 0.5px;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 30px;
+    line-height: 36px;
+    height: 80px;
+  }
+}

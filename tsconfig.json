@@ -2,10 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "alwaysStrict": true,
     "skipLibCheck": true,
@@ -26,9 +32,24 @@
     "noImplicitThis": true,
     "jsx": "preserve",
     "esModuleInterop": true,
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "exclude": ["node_modules", "mock"],
-  "include": ["**/*.ts", "**/*.tsx", "create-component.js"],
-  "files": ["src/declarations/svgr.d.ts"]
+  "exclude": [
+    "node_modules",
+    "mock"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "create-component.js",
+    ".next/types/**/*.ts"
+  ],
+  "files": [
+    "src/declarations/svgr.d.ts"
+  ]
 }

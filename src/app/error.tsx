@@ -1,22 +1,28 @@
+'use client';
+
 import type { FC } from 'react';
 import Lottie from 'lottie-react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 import notFoundAnimation from 'public/animations/notFound.json';
 import ArrowIcon from 'public/icons/arrow_back.svg';
 
-import styles from './Errors.module.scss';
+import styles from './error.module.scss';
 
-const Error: FC = () => {
+interface ErrorProps {
+  reset: () => void;
+}
+
+const Error: FC<ErrorProps> = () => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.reload();
+    router.refresh();
   };
 
   return (
-    <div className={styles.root}>
+    <main className={styles.root}>
       <header className={styles.header}>
         <Link href="/" className={styles.back}>
           <ArrowIcon />
@@ -30,7 +36,7 @@ const Error: FC = () => {
           Обновить
         </button>
       </div>
-    </div>
+    </main>
   );
 };
 
