@@ -4,6 +4,9 @@ interface UseProgressValueParams extends Pick<Limit, 'currentValue' | 'unlimited
   styles: Dictionary<string>;
 }
 
+const MIN_VALUE = 25;
+const MED_VALUE = 50;
+
 export default function useProgressValue({
   unlimited,
   styles,
@@ -14,9 +17,9 @@ export default function useProgressValue({
 
   return {
     computedClassName: {
-      [styles.high]: percent > 50,
-      [styles.medium]: percent > 25 && percent <= 50,
-      [styles.low]: percent <= 25,
+      [styles.high]: percent > MED_VALUE,
+      [styles.medium]: percent > MIN_VALUE && percent <= MED_VALUE,
+      [styles.low]: percent <= MIN_VALUE,
     },
     percent: Math.min(percent, 100),
   };

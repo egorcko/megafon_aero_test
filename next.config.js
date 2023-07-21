@@ -33,11 +33,11 @@ const config = {
   images: {
     domains: [],
   },
-  publicRuntimeConfig: {
-    baseUrl: process.env.NEXT_PUBLIC_API_URL,
-  },
   swcMinify: true,
   crossOrigin: 'anonymous',
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = config;

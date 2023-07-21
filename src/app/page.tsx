@@ -21,10 +21,10 @@ const MainPage: FC = () => {
   }
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <LogoIcon className={styles.logo} />
       <Content />
-    </div>
+    </section>
   );
 };
 

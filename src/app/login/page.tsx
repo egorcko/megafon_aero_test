@@ -22,11 +22,11 @@ const Login: FC = () => {
   }
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <LogoIcon className={styles.logo} />
       <LoginForm />
       <h2 className={styles.subtitle}>Включайся!</h2>
-    </div>
+    </section>
   );
 };
 
