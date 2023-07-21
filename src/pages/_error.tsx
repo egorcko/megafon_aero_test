@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import type { MetaData } from '@/types/meta';
 
 const Errors = dynamic(() => import('@/ui/pages/Errors/Errors'));
-const Layout = dynamic(() => import('@/ui/components/Layout/Layout'));
+const Layout = dynamic(() => import('@/ui/Layout/Layout'));
 
 interface ErrorProps {
   meta: MetaData;

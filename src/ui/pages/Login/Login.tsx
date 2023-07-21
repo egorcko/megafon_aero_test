@@ -44,7 +44,7 @@ const Login: FC = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <LogoIcon className={styles.logo} />
       <section className={styles.formWrapper}>
         <h1 className={styles.title}>Вход в Личный кабинет</h1>
@@ -86,7 +86,7 @@ const Login: FC = () => {
         </form>
       </section>
       <h2 className={styles.subtitle}>Включайся!</h2>
-    </div>
+    </section>
   );
 };
 

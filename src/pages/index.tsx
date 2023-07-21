@@ -6,7 +6,7 @@ import { AUTH_COOKIE } from '@/constants';
 
 import type { MetaData } from '@/types/meta';
 
-const Layout = dynamic(() => import('@/ui/components/Layout/Layout'));
+const Layout = dynamic(() => import('@/ui/Layout/Layout'));
 const MainPage = dynamic(() => import('@/ui/pages/MainPage/MainPage'));
 
 interface IndexPageProps {

@@ -1,11 +1,10 @@
 import type { FC, PropsWithChildren } from 'react';
-import dynamic from 'next/dynamic';
 
 import type { MetaData } from '@/types/meta';
 
-import styles from './Layout.module.scss';
+import Meta from '../../Meta/Meta';
 
-const Meta = dynamic(() => import('@/ui/services/Meta/Meta'));
+import styles from './Layout.module.scss';
 
 interface LayoutProps {
   meta?: MetaData;

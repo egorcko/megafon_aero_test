@@ -51,7 +51,7 @@ const MainPage: FC = () => {
   }, [loadData, userData]);
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <LogoIcon className={styles.logo} />
       <section className={styles.contentWrapper}>
         <header className={styles.header}>
@@ -73,7 +73,7 @@ const MainPage: FC = () => {
           {!loading && limits?.map((item) => <LimitIndicator {...item} key={item.id} />)}
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

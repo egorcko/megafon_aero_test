@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 
 import type { MetaData } from '@/types/meta';
 
-const Layout = dynamic(() => import('@/ui/components/Layout/Layout'));
+const Layout = dynamic(() => import('@/ui/Layout/Layout'));
 const Errors = dynamic(() => import('@/ui/pages/Errors/Errors'));
 
 interface NotFoundPageProps {
